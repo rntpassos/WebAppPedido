@@ -1,0 +1,47 @@
+﻿@model WebAppPedido.Areas.Admin.Models.DetailUserRoleView
+
+@{
+}
+<body>
+    @if (Model == null)
+    {
+        <h1>Usuário não encontrado.</h1>
+    }
+    else
+    {
+        <p><h1>Usuário: @Model.NomeUsuario</h1></p>
+        <form asp-action="RemoveRole" asp-controller="EditUsers">
+            <fieldset>
+                <input type="hidden" asp-for="IdUsuario" />
+                <div class="form-group">
+                    <label for="exampleSelect2" class="form-label mt-4">Funções vinculadas ao usuário</label>
+                    <select style="width:500px" multiple="" asp-for="Role" class="form-select" id="role">
+                        @foreach (var item in Model.roles)
+                        {
+                            <option>@item</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Remover Função</button>
+            </fieldset>
+        </form>
+        <p></p>
+        <form asp-action="AddRole" asp-controller="EditUsers">
+            <fieldset>
+                <input type="hidden" asp-for="IdUsuario" />
+                <div class="form-group">
+                    <label for="exampleSelect2" class="form-label mt-4">Funções disponíveis</label>
+                    <select style="width:500px" multiple="" asp-for="Role" class="form-select" id="role">
+                        @foreach (var item in Model.naoRoles)
+                        {
+                            <option>@item</option>
+                        }
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar Função</button>
+            </fieldset>
+        </form>
+
+    }
+
+</body>

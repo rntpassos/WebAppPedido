@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebAppPedido.Areas.Admin.Models.UsersView>
+
+@{
+    ViewData["Title"] = "Usuários";
+}
+<p>
+    <h1>Usuários</h1>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Roles)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @foreach (var role in item.Roles)
+                    {
+                        @role
+                        <br />
+                    }
+                </td>
+                <td>
+                    <a asp-action="DetailUserRole" asp-route-id="@item.Id">Roles</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - WebAppPedido</title>
-    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" /> *@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/bootstrap.lux.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/WebAppPedido.styles.css" asp-append-version="true" />
@@ -13,11 +12,6 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
-@*                 <a class="navbar-brand" asp-area="" asp-page="/Index">WebAppPedido</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> *@
                 <img src="~/logo.jpg" width="100" height="100" />
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
@@ -27,10 +21,20 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Gerente"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" asp-area="Gerente" asp-controller="Produtos" asp-action="Index">Lista de Produtos</a>
+                                    <div class="dropdown-divider"></div>
+                                </div>
+                            </li>
+                        }
                         @if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
                             <li class="nav-item dropdown">
-                                <a class="nav-link" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador</a>
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrador</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" asp-area="Admin" asp-controller="EditUsers" asp-action="Index">Usuários</a>
                                     <div class="dropdown-divider"></div>

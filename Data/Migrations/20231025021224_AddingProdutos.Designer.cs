@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebAppPedido.Data;
 
@@ -11,9 +12,11 @@ using WebAppPedido.Data;
 namespace WebAppPedido.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231025021224_AddingProdutos")]
+    partial class AddingProdutos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -226,63 +229,6 @@ namespace WebAppPedido.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("WebAppPedido.Areas.Cliente.Models.Cliente", b =>
-                {
-                    b.Property<int>("ClienteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValueSql("NEXT VALUE FOR ProximoID");
-
-                    b.Property<string>("CpfCnpj")
-                        .HasMaxLength(14)
-                        .HasColumnType("nvarchar(14)");
-
-                    b.Property<string>("Nome")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.HasKey("ClienteId");
-
-                    b.ToTable("Clientes");
-                });
-
-            modelBuilder.Entity("WebAppPedido.Areas.Cliente.Models.EnderecoCliente", b =>
-                {
-                    b.Property<int>("EnderecoClienteID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasDefaultValueSql("NEXT VALUE FOR ProximoID");
-
-                    b.Property<int>("ClienteId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Complemento")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Denominacao")
-                        .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<string>("Logradouro")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int>("Número")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("Principal")
-                        .HasColumnType("bit");
-
-                    b.HasKey("EnderecoClienteID");
-
-                    b.HasIndex("ClienteId");
-
-                    b.ToTable("EnderecoCliente");
-                });
-
             modelBuilder.Entity("WebAppPedido.Areas.Gerente.Models.Produto", b =>
                 {
                     b.Property<int>("ProdutoId")
@@ -317,7 +263,7 @@ namespace WebAppPedido.Data.Migrations
 
                     b.Property<decimal>("Valor")
                         .HasPrecision(10, 2)
-                        .HasColumnType("decimal");
+                        .HasColumnType("decimal(10,2)");
 
                     b.HasKey("ProdutoId");
 
@@ -373,22 +319,6 @@ namespace WebAppPedido.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WebAppPedido.Areas.Cliente.Models.EnderecoCliente", b =>
-                {
-                    b.HasOne("WebAppPedido.Areas.Cliente.Models.Cliente", "Cliente")
-                        .WithMany("Enderecos")
-                        .HasForeignKey("ClienteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Cliente");
-                });
-
-            modelBuilder.Entity("WebAppPedido.Areas.Cliente.Models.Cliente", b =>
-                {
-                    b.Navigation("Enderecos");
                 });
 #pragma warning restore 612, 618
         }

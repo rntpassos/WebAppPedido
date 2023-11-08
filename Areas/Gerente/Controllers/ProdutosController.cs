@@ -45,7 +45,7 @@ namespace WebAppPedido.Areas.Gerente.Controllers
                 return NotFound();
             }
 
-            return View(produto);
+            return PartialView("_DetalhesProduto", produto);
         }
 
         // GET: Gerente/Produtos/Create
@@ -84,7 +84,7 @@ namespace WebAppPedido.Areas.Gerente.Controllers
             {
                 return NotFound();
             }
-            return View(produto);
+            return PartialView("_EditarProduto", produto);
         }
 
         // POST: Gerente/Produtos/Edit/5
@@ -122,7 +122,7 @@ namespace WebAppPedido.Areas.Gerente.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(produto);
         }
@@ -142,19 +142,19 @@ namespace WebAppPedido.Areas.Gerente.Controllers
                 return NotFound();
             }
 
-            return View(produto);
+            return PartialView("_ConfirmaCancelamento", produto);
         }
 
         // POST: Gerente/Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int ProdutoId)
         {
             if (_context.Produtos == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Produtos'  is null.");
             }
-            var produto = await _context.Produtos.FindAsync(id);
+            var produto = await _context.Produtos.FindAsync(ProdutoId);
             if (produto != null)
             {
                 _context.Produtos.Remove(produto);

@@ -30,9 +30,7 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Pages\" />
-    <Folder Include="Areas\Cliente\Controllers\" />
     <Folder Include="Areas\Cliente\Data\" />
-    <Folder Include="Areas\Cliente\Views\" />
     <Folder Include="Areas\Gerente\Data\" />
   </ItemGroup>
 

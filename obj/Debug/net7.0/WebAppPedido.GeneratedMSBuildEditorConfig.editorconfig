@@ -24,6 +24,46 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWRpdFVzZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/Cliente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xDbGllbnRlXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/Cliente/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xDbGllbnRlXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/Cliente/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xDbGllbnRlXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/Cliente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xDbGllbnRlXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/Cliente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xDbGllbnRlXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/EnderecoCliente/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xFbmRlcmVjb0NsaWVudGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/EnderecoCliente/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xFbmRlcmVjb0NsaWVudGVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/EnderecoCliente/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xFbmRlcmVjb0NsaWVudGVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/EnderecoCliente/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xFbmRlcmVjb0NsaWVudGVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Cliente/Views/EnderecoCliente/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2xpZW50ZVxWaWV3c1xFbmRlcmVjb0NsaWVudGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/renat/source/repos/WebAppPedido/Areas/Gerente/Views/Produtos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2VyZW50ZVxWaWV3c1xQcm9kdXRvc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +82,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/renat/source/repos/WebAppPedido/Areas/Gerente/Views/Produtos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2VyZW50ZVxWaWV3c1xQcm9kdXRvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Gerente/Views/Produtos/_AdicionarProduto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2VyZW50ZVxWaWV3c1xQcm9kdXRvc1xfQWRpY2lvbmFyUHJvZHV0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Gerente/Views/Produtos/_ConfirmaCancelamento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2VyZW50ZVxWaWV3c1xQcm9kdXRvc1xfQ29uZmlybWFDYW5jZWxhbWVudG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Gerente/Views/Produtos/_DetalhesProduto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2VyZW50ZVxWaWV3c1xQcm9kdXRvc1xfRGV0YWxoZXNQcm9kdXRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/renat/source/repos/WebAppPedido/Areas/Gerente/Views/Produtos/_EditarProduto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcR2VyZW50ZVxWaWV3c1xQcm9kdXRvc1xfRWRpdGFyUHJvZHV0by5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/renat/source/repos/WebAppPedido/Areas/Identity/Pages/_ViewStart.cshtml]

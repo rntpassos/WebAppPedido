@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<WebAppPedido.Areas.Gerente.Models.Produto>
-
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Produtos";
 }
 <p>
     <h1>Lista de Produtos</h1>
 </p>
-
 <p>
     <a asp-action="Create">Adicionar novo produto</a>
+    <br />
+    <a class="btn btn-light btn-adicionar" data-bs-toggle="modal" data-bs-target="#modalAdicionar">Adicionar novo produto</a>
 </p>
 <table class="table">
     <thead>
@@ -29,26 +29,65 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Valor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RegistroAtivo)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProdutoId">Editar</a> |
-                <a asp-action="Details" asp-route-id="@item.ProdutoId">Detalhes</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProdutoId">Remover</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegistroAtivo)
+                </td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-secondary btn-editar" data-bs-toggle="modal" data-bs-target="#modalEditar" produtoId="@item.ProdutoId">Editar</a>
+                        <a class="btn btn-secondary btn-detalhes" data-bs-toggle="modal" data-bs-target="#modalDetalhes" produtoId="@item.ProdutoId">Detalhes</a>
+                        <a class="btn btn-secondary btn-confirma-exclusao" data-bs-toggle="modal" data-bs-target="#modalConfirmaExclusao" produtoId="@item.ProdutoId">Remover</a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<!-- Modal - Confirma Exclusão -->
+<div class="modal" id="modalConfirmaExclusao" tabindex="-1" aria-labelledby="lModalConfirmaExclusao" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="modalContentConfirmaExclusao"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal - Visualiza Detalhes -->
+<div class="modal" id="modalDetalhes" tabindex="-1" aria-labelledby="lModalDetalhes" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="modalContentDetalhes"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal - Edição -->
+<div class="modal" id="modalEditar" tabindex="-1" aria-labelledby="lModalEditar" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="modalContentEditar"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal - Adicionar -->
+<div class="modal" id="modalAdicionar" tabindex="-1" aria-labelledby="lModalAdicionar" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div id="modalContentAdicionar"></div>
+        </div>
+    </div>
+</div>
